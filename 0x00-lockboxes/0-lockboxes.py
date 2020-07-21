@@ -3,9 +3,6 @@
 
 def canUnlockAll(boxes):
 
-    if boxes == []:
-        return True
-
     hand = [0]
 
     for keys in hand:
@@ -17,4 +14,5 @@ def canUnlockAll(boxes):
 
     if len(hand) != len(boxes):
         return False
-    return True
+    else:
+        return True
