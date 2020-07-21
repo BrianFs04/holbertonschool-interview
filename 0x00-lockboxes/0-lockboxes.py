@@ -10,9 +10,9 @@ def canUnlockAll(boxes):
             if boxKey not in hand:
                 if boxKey >= len(boxes):
                     return False
-                hand.append(boxKey)
+                else:
+                    hand.append(boxKey)
 
-    if len(hand) != len(boxes):
-        return False
-    else:
+    if len(hand) == len(boxes):
         return True
+    return False
