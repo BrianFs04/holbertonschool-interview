@@ -77,10 +77,10 @@ heap_t *findParent(heap_t *root)
 	rd = binary_tree_is_perfect(p->right);
 	if (!l || !r)
 		return (p);
-	if (!rd || (ld && rd && l > r))
-		return (findParent(p->right));
-	else if (!ld || (ld && rd && l == r))
+	if (!ld || (ld && rd && l == r))
 		return (findParent(p->left));
+	else if (!rd || (ld && rd && l > r))
+		return (findParent(p->right));
 	return (p);
 }
 
@@ -124,10 +124,10 @@ heap_t *heap_insert(heap_t **root, int value)
 		return (NULL);
 	if (!parent)
 		*root = new;
-	else if (!parent->right)
-		parent->right = new;
-	else
+	else if (!parent->left)
 		parent->left = new;
+	else
+		parent->right = new;
 	swap(&new);
 	return (new);
 }
