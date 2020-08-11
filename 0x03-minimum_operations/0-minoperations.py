@@ -11,7 +11,7 @@ def minOperations(n):
     for i in range(2, n):
         while(n % i == 0):
             res += i
-            n /= i
+            n = n // i
     if res is 0:
         return(n)
     return(int(res))
