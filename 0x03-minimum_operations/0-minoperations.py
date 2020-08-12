@@ -5,13 +5,15 @@
 def minOperations(n):
     """Calculates the fewest number of operations
     needed to result in exactly n H characters"""
-    if type(n) is not int or n <= 1:
-        return(0)
-    res = 0
-    for i in range(2, n):
-        while(n % i == 0):
-            res += i
-            n = n // i
-    if res is 0:
-        return(n)
-    return(int(res))
+    if not n or n < 2:
+        return 0
+
+    mov = 0
+    min_op = 2
+    while min_op <= n:
+        if n % min_op == 0:
+            mov += min_op
+            n = n // min_op
+        else:
+            min_op += 1
+    return mov
