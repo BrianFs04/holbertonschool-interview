@@ -12,14 +12,14 @@ if __name__ == "__main__":
     ordered = {}
     size = i = 0
     count = 1
-    lst = [200, 301, 400, 401, 403, 404, 405, 500]
+    lst = ["200", "301", "400", "401", "403", "404", "405", "500"]
     data = sys.stdin
     try:
         for line in data:
             i += 1
             item = line.split(" ")
             try:
-                st_code = int(item[-2])
+                st_code = item[-2]
             except:
                 pass
             try:
