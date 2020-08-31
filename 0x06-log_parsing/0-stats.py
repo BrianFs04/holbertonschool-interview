@@ -18,27 +18,15 @@ if __name__ == "__main__":
         for line in data:
             i += 1
             item = line.split(" ")
-            try:
-                st_code = item[-2]
-            except:
-                pass
-            try:
-                size += int(item[-1])
-            except:
-                pass
-            try:
-                if st_code in lst:
-                    if ordered.get(st_code):
-                        ordered[st_code] += count
-                    else:
-                        ordered[st_code] = count
-            except:
-                pass
-            try:
-                if i % 10 == 0:
-                    print_res()
-            except:
-                pass
+            st_code = item[-2]
+            size += int(item[-1])
+            if st_code in lst:
+                if ordered.get(st_code):
+                    ordered[st_code] += count
+                else:
+                    ordered[st_code] = count
+            if i % 10 == 0:
+                print_res()
         print_res()
     except KeyboardInterrupt:
         print_res()
