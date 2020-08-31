@@ -39,6 +39,7 @@ if __name__ == "__main__":
                     print_res()
             except:
                 pass
+        print_res()
     except KeyboardInterrupt:
         print_res()
         raise
