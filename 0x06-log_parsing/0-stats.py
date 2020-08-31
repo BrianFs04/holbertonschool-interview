@@ -17,8 +17,14 @@ if __name__ == "__main__":
         for line in data:
             i += 1
             item = line.split(" ")
-            st_code = item[-2]
-            size += int(item[-1])
+            try:
+                st_code = item[-2]
+            except:
+                pass
+            try:
+                size += int(item[-1])
+            except:
+                pass
             if ordered.get(st_code):
                 ordered[st_code] += count
             else:
