@@ -12,7 +12,6 @@ if __name__ == "__main__":
     ordered = {}
     size = i = 0
     count = 1
-    lst = ["200", "301", "400", "401", "403", "404", "405", "500"]
     data = sys.stdin
     try:
         for line in data:
@@ -20,11 +19,10 @@ if __name__ == "__main__":
             item = line.split(" ")
             st_code = item[-2]
             size += int(item[-1])
-            if st_code in lst:
-                if ordered.get(st_code):
-                    ordered[st_code] += count
-                else:
-                    ordered[st_code] = count
+            if ordered.get(st_code):
+                ordered[st_code] += count
+            else:
+                ordered[st_code] = count
             if i % 10 == 0:
                 print_res()
         print_res()
