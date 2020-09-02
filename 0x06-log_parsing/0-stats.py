@@ -11,15 +11,18 @@ def print_res():
 if __name__ == "__main__":
     ordered = {}
     size = i = 0
-    codes = [200, 301, 400, 401, 403, 404, 405, 500]
+    codes = ["200", "301", "400", "401", "403", "404", "405", "500"]
     count = 1
     data = sys.stdin
     try:
         for line in data:
             i += 1
             item = line.split(" ")
-            st_code = int(item[-2])
-            size += int(item[-1])
+            st_code = item[-2]
+            try:
+                size += int(item[-1])
+            except:
+                pass
             try:
                 if st_code in codes:
                     if ordered.get(st_code):
