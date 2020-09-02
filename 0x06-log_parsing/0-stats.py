@@ -18,7 +18,7 @@ if __name__ == "__main__":
         for line in data:
             i += 1
             item = line.split(" ")
-            st_code = item[-2]
+            st_code = int(item[-2])
             size += int(item[-1])
             try:
                 if st_code in codes:
