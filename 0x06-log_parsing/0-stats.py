@@ -17,9 +17,9 @@ if __name__ == "__main__":
     try:
         for line in data:
             i += 1
-            item = line.split(" ")
-            st_code = item[-2]
             try:
+                item = line.split(" ")
+                st_code = item[-2]
                 size += int(item[-1])
             except:
                 pass
