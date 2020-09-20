@@ -2,15 +2,22 @@
 """validUTF8"""
 
 
+def _count_leading_ones(byte):
+    for i in range(8):
+        if byte >> (7 - i) == 0b11111111 >> (7 - i) & ~1:
+            return i
+    return 8
+
+
 def validUTF8(data):
     """Determines if a given data set represents a valid UTF-8 encoding"""
-    bytes = 0
-    for b in data:
-        b = bin(b).replace('0b', '').rjust(8, '0')
-        if bytes != 0:
-            bytes -= 1
-            if not b.startswith('10'):
-                return False
-        elif b[0] == '1':
-            bytes = len(b.split('0')[0]) - 1
+    data = iter(data)
+    for leading_byte in data:
+        leading_ones = _count_leading_ones(leading_byte)
+        if leading_ones in [1, 7, 8]:
+            return False        # Illegal leading byte
+        for _ in range(leading_ones - 1):
+            trailing_byte = next(data, None)
+            if trailing_byte is None or trailing_byte >> 6 != 0b10:
+                return False    # Missing or illegal trailing byte
     return True
