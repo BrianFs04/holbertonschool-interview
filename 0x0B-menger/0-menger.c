@@ -1,6 +1,6 @@
 #include "menger.h"
 /**
- * isSpace - Checks if a frid is a space
+ * isSpace - Checks if a cell is a space
  * @row: row index
  * @col: col index
  * Return: 1 if cell is a space, 0 otherwise.
@@ -17,7 +17,7 @@ int isSpace(int row, int col)
 }
 
 /**
- * menger - Print the a 2D menger sponge
+ * menger - Print the 2D menger sponge
  * @level: level of the Menger Sponge to draw
  */
 void menger(int level)
