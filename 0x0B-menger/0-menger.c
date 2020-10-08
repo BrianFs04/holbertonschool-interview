@@ -1,9 +1,9 @@
 #include "menger.h"
 /**
- * isSpace - Checksif a frid is a space
+ * isSpace - Checks if a frid is a space
  * @row: row index
  * @col: col index
- * Return: 1 if cell is a space, 0 if it isn't.
+ * Return: 1 if cell is a space, 0 otherwise.
  */
 int isSpace(int row, int col)
 {
