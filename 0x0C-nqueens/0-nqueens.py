@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-'''N queens game puzzle'''
+"""Nqueens game puzzle"""
 import sys
 
 
 def is_position(solution, pos):
-    '''Function that verifies if the position is valid'''
+    """Function that verifies if the position is valid"""
     for queen in solution:
         if queen[1] == pos[1]:
             return False
@@ -16,7 +16,7 @@ def is_position(solution, pos):
 
 
 def solve_queens(row, n, solution):
-    '''Function that finds the solution recursively, from the root down'''
+    """Function that finds the solution recursively, from the root down"""
     if (row == n):
         print(solution)
     else:
@@ -29,13 +29,13 @@ def solve_queens(row, n, solution):
 
 
 def main(n):
-    '''Main definition'''
+    """Main definition"""
     solution = []
     solve_queens(0, n, solution)
 
 
 if __name__ == '__main__':
-    '''Magic call for arguments'''
+    """Magic call for arguments"""
     if len(sys.argv) != 2:
         print('Usage: nqueens N')
         sys.exit(1)
