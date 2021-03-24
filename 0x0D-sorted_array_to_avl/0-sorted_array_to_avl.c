@@ -9,17 +9,17 @@ avl_t *heap_insert(avl_t **root, int size, int start, int *array);
  */
 avl_t *binary_tree_node(avl_t *parent, int value)
 {
-    avl_t *newnode;
+    avl_t *nd;
 
-    newnode = malloc(sizeof(avl_t));
-    if (!newnode)
+    nd = malloc(sizeof(avl_t));
+    if (!nd)
         return (NULL);
 
-    newnode->n = value;
-    newnode->parent = parent;
-    newnode->left = NULL;
-    newnode->right = NULL;
-    return (newnode);
+    nd->n = value;
+    nd->parent = parent;
+    nd->left = NULL;
+    nd->right = NULL;
+    return (nd);
 }
 
 /**
@@ -33,16 +33,16 @@ avl_t *binary_tree_node(avl_t *parent, int value)
 avl_t *heap_insert(avl_t **root, int size, int start, int *array)
 {
     int mid = (start + size) / 2;
-    avl_t *new = NULL;
+    avl_t *nd = NULL;
 
     if (size < start)
         return (NULL);
-    new = binary_tree_node(*root, array[mid]);
+    nd = binary_tree_node(*root, array[mid]);
     if (mid != start)
-        new->left = heap_insert(&new, mid - 1, start, array);
+        nd->left = heap_insert(&nd, mid - 1, start, array);
     if (mid != size)
-        new->right = heap_insert(&new, size, mid + 1, array);
-    return (new);
+        nd->right = heap_insert(&nd, size, mid + 1, array);
+    return (nd);
 }
 
 /**
