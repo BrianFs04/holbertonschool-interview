@@ -13,7 +13,6 @@ getData();
 function getData () {
   request(options, async (err, response, body) => {
     if (!err) {
-      console.log(JSON.parse(body));
       for (const people of JSON.parse(body).characters) {
         await getCharactersNames(people);
       }
