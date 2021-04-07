@@ -1,0 +1,14 @@
+{
+    "name": "0x0f-starwars_api",
+    "version": "1.0.0",
+    "description": "Star Wars API",
+    "main": "0-starwars_characters.js",
+    "scripts": {
+        "test": "node 0-starwars_characters.js 3"
+    },
+    "author": "Brian Florez",
+    "license": "ISC",
+    "devDependencies": {
+        "request": "^2.88.2"
+    }
+}
